@@ -1,0 +1,31 @@
+﻿@model List<Instructor>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Instructors</h1>
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>Instructor Name</th>
+                <th>Account</th>
+                <th>Address</th>
+                <th>Department</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var instructor in Model)
+            {
+                <tr>
+                    <td>@instructor.Name</td>
+                    <td>@instructor.Account.UserName</td>
+                    <td>@instructor.Address</td>
+                    <td>@instructor.Department.Id</td>
+                    <td>
+                        <img src="/Images/@instructor.Image" class="img-fluid" style="max-width: 200px; max-height: 200px;" alt="Instructor Image">
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
